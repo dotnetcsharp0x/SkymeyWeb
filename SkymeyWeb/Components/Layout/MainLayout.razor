@@ -1,16 +1,27 @@
 ﻿@inherits LayoutComponentBase
 
-    <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom container">
-        <div class="row">
-        <a href="/" class="d-inline-flex link-body-emphasis text-decoration-none">
+    <header class="border-bottom container pb-2">
+    <div class="row">
+
+        <div class="col-6 col-sm-2 d-inline-block pt-3">
+            <a href="/" class="d-inline-flex link-body-emphasis text-decoration-none">
                 <img src="/img/logo/skymeyweblogo.png" height="35" width="120" />
-        </a>
+            </a>
+        </div>
+
+        <div class="col-5 col-sm-7 d-none d-sm-inline-block">
+            <NavMenu></NavMenu>
+        </div>
+         
+        <div class="col-6 col-sm-3 pt-3">
+            <Flags></Flags>
+        </div>
+
     </div>
-
-    <NavMenu></NavMenu>
-
-    <div class="col-md-3 text-end">
-        <Flags></Flags>
+    <div class="row d-sm-none">
+        <div class="col-12">
+            <NavMenu></NavMenu>
+        </div>
     </div>
 </header>
 

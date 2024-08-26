@@ -29,6 +29,14 @@ html, body {
 .navbar-nav .nav-link:hover {
     color:#0086F8;
 }
+#navbarNavAltMarkup a:hover {
+    font-weight:bold;
+}
+
+#navbarNavAltMarkup .nav-link {
+    margin-left:5px;
+    margin-right:5px;
+}
 
 @font-face {
     font-family: 'ubuntu-light';
