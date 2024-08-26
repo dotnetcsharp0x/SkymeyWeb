@@ -23,6 +23,10 @@ html, body {
     padding: 0px 2px 0px 2px;
     cursor:pointer;
 }
+
+.flags .dropdown-toggle::after {
+vertical-align:middle;
+}
 .navbar-nav a {
     font-weight:bold;
 }
@@ -30,12 +34,37 @@ html, body {
     color:#0086F8;
 }
 #navbarNavAltMarkup a:hover {
-    font-weight:bold;
+    font-weight: bold;
+    color: #0086F8;
+    transition: 0.5s;
 }
 
 #navbarNavAltMarkup .nav-link {
     margin-left:5px;
     margin-right:5px;
+}
+
+
+@media (max-width:960px) {
+    #navbarNavAltMarkup .nav-link {
+        margin-top: 5px;
+        margin-bottom: 5px;
+        padding-left: 15px;
+        border-right: .3em solid transparent;
+        border-bottom: .3em solid transparent;
+        border-left: 0 solid transparent;
+        border-top: .3em solid transparent;
+    }
+        #navbarNavAltMarkup .nav-link:hover {
+            display: inline-block;
+            margin-left: .255em;
+            vertical-align: .255em;
+            content: "";
+            border-right: .3em solid;
+            border-bottom: .3em solid transparent;
+            border-left: 0;
+            border-top: .3em solid transparent;
+        }
 }
 
 @font-face {
