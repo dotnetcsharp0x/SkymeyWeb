@@ -21,3 +21,8 @@ appsettings.json
 */
 
 ```
+
+
+## Set up the main appsettings.json ##
+
+Follow to: https://github.com/dotnetcsharp0x/SkymeyLibs
