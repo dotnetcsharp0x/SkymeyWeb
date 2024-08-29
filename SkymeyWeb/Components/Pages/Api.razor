@@ -1,0 +1,43 @@
+﻿@page "/api"
+
+<PageTitle>Home</PageTitle>
+
+<div class="container-fluid">
+    <div class="row text-wrap">
+        <div class="col endpoints" style="border:1px solid red;">
+            <h4>
+                ENDPOINTS
+            </h4>
+            <div class="Stocks endpoints-block">
+                <div class="endpoints-show collapsed"
+                     type="button"
+                     data-bs-toggle="collapse"
+                     data-bs-target="#collapse-stocks"
+                     aria-expanded="false"
+                     aria-controls="collapse-stocks">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-compact-down" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M1.553 6.776a.5.5 0 0 1 .67-.223L8 9.44l5.776-2.888a.5.5 0 1 1 .448.894l-6 3a.5.5 0 0 1-.448 0l-6-3a.5.5 0 0 1-.223-.67" />
+                    </svg>
+                    <label>Stocks</label>
+                </div>
+                <div class="endpoints-list-stock collapse show" id="collapse-stocks">
+                    <ul>
+                        <li>1</li>
+                        <li>2</li>
+                        <li>3</li>
+                        <li>4</li>
+                        <li>5</li>
+                        <li>6</li>
+                        <li>7</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-6" style="border:1px solid blue;">
+            2
+        </div>
+        <div class="col" style="border:1px solid yellow;">
+            3
+        </div>
+    </div>
+</div>
