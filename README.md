@@ -12,12 +12,12 @@ appsettings.json
     }
   },
   "AllowedHosts": "*",
-  "ConfigPath": "absolute path to main appsettings.json"
+  "ConfigPath": "absolute path to the main appsettings.json"
 }
 ```
 ```csharp
 /*
-"ConfigPath": "absolute path to main appsettings.json" = absolute path to your main settings. Example: C:\\projects\\Skymey\\Libs\\SkymeyLibs\\SkymeyLibs
+"ConfigPath": "absolute path to the main appsettings.json" = absolute path to your main settings. Example: C:\\projects\\Skymey\\Libs\\SkymeyLibs\\SkymeyLibs
 */
 
 ```
