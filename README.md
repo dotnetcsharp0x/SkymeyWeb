@@ -17,3 +17,13 @@ appsettings.json
 }
 
 ```
+
+## 2 step ##
+
+### 2.1 Set up the main appsettings.json ###
+
+Follow to: https://github.com/dotnetcsharp0x/SkymeyLibs
+
+### 2.2 Set up the API appsettings.json ###
+
+Follow to: https://github.com/dotnetcsharp0x/SkymeyAPIPost/
