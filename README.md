@@ -1,4 +1,6 @@
-# SkymeyWeb
+# Steps to run the project #
+
+## 1 step ##
 
 Before starting the project, put the following file into the project directory:
 
@@ -21,8 +23,8 @@ appsettings.json
 */
 
 ```
+## 2 step ##
 
-
-## Set up the main appsettings.json ##
+### Set up the main appsettings.json ###
 
 Follow to: https://github.com/dotnetcsharp0x/SkymeyLibs
