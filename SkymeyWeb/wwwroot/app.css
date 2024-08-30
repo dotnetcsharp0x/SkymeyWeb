@@ -276,6 +276,66 @@ vertical-align:middle;
 .try-it button {
     font-family: 'ubuntu-medium';
 }
+.home-main-text-top {
+    font-family: 'ubuntu-medium';
+    margin-top: 5%;
+    font-weight: bold;
+    font-size: 46pt;
+    cursor: text;
+    text-align: center;
+}
+
+.home-main-text-top div {
+    padding-left: 15px;
+    background: #7858FE;
+    background: linear-gradient(to right, #7858FE 0%, #F190DF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display:inline-block;
+}
+
+.home-main-text p {
+    font-family: 'ubuntu-medium';
+    text-align:center;
+    font-size:20pt;
+    color:#636363;
+}
+
+.home-main-text p label {
+    color:#0087FC;
+    cursor:text;
+    font-weight:bold;
+}
+
+.home-main-text .buttons {
+    text-align:center;
+    margin-top:40px;
+}
+
+.btn-markets {
+    background-color: #5C3DE6;
+    color: white;
+    font-family: 'ubuntu-medium';
+    padding:10px 15px 10px 15px;
+    border-radius:15px;
+}
+
+.btn-markets:hover {
+    background-color: #5031db;
+    color:white;
+}
+
+.btn-api {
+    border-radius: 15px;
+    font-family: 'ubuntu-medium';
+    padding: 10px 15px 10px 15px;
+    border: 1px solid #DADADA;
+    margin-left:30px;
+}
+
+.btn-api:hover {
+    border:1px solid #8d8d8d;
+}
 
 @media (max-width:960px) {
     #navbarNavAltMarkup .nav-link {
