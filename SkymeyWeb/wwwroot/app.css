@@ -61,6 +61,9 @@ vertical-align:middle;
 #collapse-Funds {
     transition: 0.2s;
 }
+#collapse-Samples {
+    transition: 0.2s;
+}
 
 .endpoints h4 {
     font-size:12pt;
@@ -224,6 +227,54 @@ vertical-align:middle;
         border-bottom: .3em solid transparent;
         border-top: .3em solid transparent;
         transition:0.2s;
+}
+.samples {
+    border:2px solid #DADADA;
+    border-radius: 8px;
+    padding:10px;
+    cursor:pointer;
+}
+
+.samples .dropdown-toggle, .samples label {
+    cursor:pointer;
+}
+
+.samples {
+    font-family: 'ubuntu-medium';
+}
+
+.sample .dropdown-toggle::after {
+    position:absolute;
+    right: 10px;
+    top:20px;
+}
+
+.samples ul {
+    margin:15px;
+}
+
+.select-sample label {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none;
+}
+
+.code-samples .endpoints-show {
+    width:100%;
+    padding:10px;
+    background-color:#dadada82;
+    border-radius:8px;
+}
+
+.code-samples .endpoints-block {
+    margin:15px 0px 0px 0px;
+}
+
+.try-it button {
+    font-family: 'ubuntu-medium';
 }
 
 @media (max-width:960px) {
