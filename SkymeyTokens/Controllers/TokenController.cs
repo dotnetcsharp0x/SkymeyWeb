@@ -31,6 +31,13 @@ namespace SkymeyTokens.Controllers
             return await _db.GetTokens();
         }
 
+        [HttpGet]
+        [Route("GetTokenList")]
+        public async Task<IEnumerable<TokenList>> GetTokenList()
+        {
+            return await _db.GetTokenList();
+        }
+
         [HttpPost]
         [Route("AddToken")]
         public async Task<IActionResult> AddToken(API_TOKEN token)

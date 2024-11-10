@@ -337,6 +337,28 @@ vertical-align:middle;
     border:1px solid #8d8d8d;
 }
 
+.ticker {
+    color:#5f5f5f;
+}
+.ticker-name {
+    font-weight:bold;
+    color:#343434;
+}
+.ticker-ticker {
+    font-size:10pt;
+}
+.hover-ticker:hover {
+    background-color:#1349b90f;
+    transition:0.2s;
+    cursor:pointer;
+}
+.table > :not(:last-child) > :last-child > * {
+    border-bottom-color:#DADADA;
+}
+.market-table tr th {
+    color:#565656;
+}
+
 @media (max-width:960px) {
     #navbarNavAltMarkup .nav-link {
         margin-top: 5px;
