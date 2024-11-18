@@ -24,6 +24,7 @@ else
             <tbody>
                     @foreach (var token in _API_TOKENs)
                     {
+                        token.Symbol = token.Symbol.Replace("USDT", "");
                         var symbol = token.Symbol + ".svg";
                         <tr class="hover-ticker">
                     <td class="align-middle">1</td>
