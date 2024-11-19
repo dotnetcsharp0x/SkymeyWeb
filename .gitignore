@@ -363,3 +363,4 @@ MigrationBackup/
 FodyWeavers.xsd
 /SkymeyWeb/appsettings.json
 /SkymeyTokens/appsettings.json
+/SkymeyUserService/appsettings.json
