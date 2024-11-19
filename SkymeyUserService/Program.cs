@@ -52,7 +52,7 @@ var audience = builder.Configuration.GetSection("JWTSettings:Audience").Value; /
 
 var signingKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey));
 
-
+ 
 builder.Services.AddAuthentication(option => { // ”казываем аутентификацию с помощью токенов
     option.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
     option.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
