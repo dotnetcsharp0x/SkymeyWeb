@@ -73,8 +73,7 @@ builder.Services.AddAuthentication(option => { // ”казываем аутентификацию с пом
 });
 #endregion
 builder.Services.Configure<MainSettings>(builder.Configuration.GetSection("MainSettings"));
-builder.Services.AddTransient<ITokenService, CreateJWTToken>();
-builder.Services.AddTransient<IUserRepository, UserRepository>();
+builder.Services.AddSingleton<IUserRepository, UserRepository>();
 var app = builder.Build();
 
 

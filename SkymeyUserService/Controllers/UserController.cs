@@ -1,9 +1,11 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MongoDB.Bson;
 using SkymeyLibs.Enums.User;
 using SkymeyLibs.Interfaces.Data;
 using SkymeyLibs.Models.User;
+using SkymeyLibs.Repository.User;
 
 namespace SkymeyUserService.Controllers
 {
@@ -18,6 +20,20 @@ namespace SkymeyUserService.Controllers
         {
             _logger = logger;
             _db = db;
+        }
+
+        [HttpPost]
+        [Route("Register")]
+        public async Task<AuthenticatedResponse> Register(SU_001 user)
+        {
+            return await _db.Register(user);
+        }
+
+        [HttpPost]
+        [Route("Login")]
+        public async Task<AuthenticatedResponse> Login(SU_001 user)
+        {
+            return await _db.Login(user);
         }
 
         [HttpGet]
@@ -39,6 +55,13 @@ namespace SkymeyUserService.Controllers
         public async Task<SG_010> GetGroup(int group_nr)
         {
             return await _db.GetGroup(group_nr);
+        }
+
+        [HttpGet]
+        [Route("AddGroup")]
+        public async Task<bool> AddGroup(SG_010 group)
+        {
+            return await _db.AddGroup(group);
         }
 
         [HttpGet]
