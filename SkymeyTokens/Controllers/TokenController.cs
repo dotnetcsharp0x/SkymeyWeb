@@ -17,7 +17,7 @@ namespace SkymeyTokens.Controllers
         private readonly ILogger<TokenController> _logger;
         private readonly IOptions<MainSettings> _options;
 
-        public TokenController(ILogger<TokenController> logger, IOptions<MainSettings> options,IMongoRepository db)
+        public TokenController(ILogger<TokenController> logger, IOptions<MainSettings> options, IMongoRepository db)
         {
             _logger = logger;
             _options = options;

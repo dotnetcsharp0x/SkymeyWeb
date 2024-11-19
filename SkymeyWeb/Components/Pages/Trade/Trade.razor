@@ -1,26 +1,23 @@
-﻿@page "/trade"
+﻿@page "/tools"
 
-<PageTitle>Trade</PageTitle>
+<PageTitle>Tools</PageTitle>
 
 <div class="container-fluid trade">
     <div class="row text-wrap">
-        <div class="card mx-2" style="width: 18rem;">
-            <img src="/img/trade/trade.png" class="card-img-top pt-3" alt="swap crypto">
-            <div class="card-body border-bottom p-0 py-3">
-                <h5 class="card-title border-bottom pb-2">Swap</h5>
-                <p class="card-text">Exchange popular cryptocurrencies in various networks</p>
-                
-            </div>
-            <a href="/trade/swap" class="btn btn-primary">Go</a>
-        </div>
-        <div class="card mx-2" style="width: 18rem;">
-            <img src="/img/trade/bot.png" class="card-img-top pt-3" alt="trading bot">
-            <div class="card-body border-bottom p-0 py-3">
-                <h5 class="card-title border-bottom pb-2">Grid bot</h5>
+        <div class="card mx-2 p-xl-3" style="width: 18rem;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-graph-up-arrow mt-1" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M0 0h1v15h15v1H0zm10 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V4.9l-3.613 4.417a.5.5 0 0 1-.74.037L7.06 6.767l-3.656 5.027a.5.5 0 0 1-.808-.588l4-5.5a.5.5 0 0 1 .758-.06l2.609 2.61L13.445 4H10.5a.5.5 0 0 1-.5-.5" />
+            </svg>
+            <div class="card-body p-0 pt-3">
+                <h5 class="card-title pb-0 fw-bold">Grid bot</h5>
                 <p class="card-text">Create and configure algorithmic trading</p>
-                
             </div>
-            <a href="/trade/grid" class="btn btn-primary">Go</a>
+            <a href="/tools/grid" class="d-flex justify-content-end" title="Grid bot">
+                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8" />
+                </svg>
+            </a>
+            
         </div>
     </div>
 </div>

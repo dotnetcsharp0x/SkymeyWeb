@@ -362,6 +362,33 @@ vertical-align:middle;
 .trade .btn-primary {
     margin-bottom:15px;
 }
+.trade .card {
+    border-radius:15px;
+}
+#navbarNavAltMarkup1 a {
+    margin: 0px 5px 0px 5px;
+}
+
+#navbarNavAltMarkup1 a:hover {
+    font-weight: bold;
+    color: #0086F8;
+    transition: 0.5s;
+}
+
+
+.trade {
+    font-family: 'ubuntu-regular';
+}
+
+.trade p {
+    font-family: 'ubuntu-bold';
+    color:#6f6f6f;
+    font-size:10pt;
+}
+.trade .bi-graph-up-arrow {
+color: #0086F8;
+}
+
 
 @media (max-width:960px) {
     #navbarNavAltMarkup .nav-link {
