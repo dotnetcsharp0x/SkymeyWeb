@@ -1,10 +1,11 @@
-﻿@page "/Market"
+﻿@page "/Market/Bonds"
 @inject HttpClient _httpClient
 
 <PageTitle>Markets</PageTitle>
 
 <div class="container-fluid">
     <div class="row text-wrap">
+        <TypeMenu/>
         @if (_API_TOKENs == null)
 {
     <p><em>Loading...</em></p>

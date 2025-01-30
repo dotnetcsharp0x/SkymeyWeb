@@ -389,6 +389,30 @@ vertical-align:middle;
 color: #0086F8;
 }
 
+.navbar-typemenu ul {
+    display: ruby;
+}
+
+.navbar-typemenu ul li a {
+    border: 1px solid #6363633a;
+    margin: 5px 5px 5px 5px;
+    border-radius: 8px;
+    font-size: 12pt;
+    font-family: '42dotSans-Light';
+}
+.navbar-light .navbar-nav .nav-link {
+    color: black;
+    padding: 8px 12px 8px 12px;
+}
+
+.navbar-typemenu ul li a:hover {
+    background-color: #63636311;
+}
+
+.navbar-typemenu ul li .active {
+    border: 2px solid #0087fc77;
+}
+
 
 @media (max-width:960px) {
     #navbarNavAltMarkup .nav-link {
@@ -431,4 +455,9 @@ color: #0086F8;
 @font-face {
     font-family: 'ubuntu-medium';
     src: url('fonts/ubuntu/ubuntu-medium.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: '42dotSans-Light';
+    src: url('fonts/dotsans/42dotSans-Light.ttf') format('truetype');
 }

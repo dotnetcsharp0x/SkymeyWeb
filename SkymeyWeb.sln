@@ -5,11 +5,7 @@ VisualStudioVersion = 17.12.35209.166
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkymeyWeb", "SkymeyWeb\SkymeyWeb.csproj", "{B31F0DC4-12A2-471B-A47C-0EE3A5CC7514}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkymeyLibs", "..\..\Libs\SkymeyLibs\SkymeyLibs\SkymeyLibs.csproj", "{653D2B59-B37F-4568-8AF1-A0A642756D3A}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkymeyAPIPost", "..\..\Posts\SkymeyAPIPost\SkymeyAPIPost\SkymeyAPIPost.csproj", "{4DF7D354-5C0D-45B5-8E7D-D8FFAEB7CE85}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkymeyPostModerator", "..\..\PostModerator\SkymeyPostModerator\SkymeyPostModerator\SkymeyPostModerator.csproj", "{932EEBE9-2155-4A90-ADC7-21F42631D4B1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkymeyProcessController", "..\..\..\..\Skymey\SkymeyAPI\SkymeyProcessController\SkymeyProcessController.csproj", "{12B41CA6-7DDF-43E3-8C8C-F3063DDC68B1}"
 EndProject
@@ -21,6 +17,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkymeyUserService", "Skymey
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkymeyMainAPI", "SkymeyMainAPI\SkymeyMainAPI.csproj", "{20BDB715-0A80-4336-93A4-DAE158D58E40}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkymeyLibs", "..\SkymeyLibs\SkymeyLibs\SkymeyLibs.csproj", "{194120EF-95A1-4D14-875D-E6EEAE104C06}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkymeyPostModerator", "..\SkymeyPostModerator\SkymeyPostModerator\SkymeyPostModerator.csproj", "{30CA80B2-46AD-407A-9F00-C7ECDE8CA7AC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,18 +31,10 @@ Global
 		{B31F0DC4-12A2-471B-A47C-0EE3A5CC7514}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B31F0DC4-12A2-471B-A47C-0EE3A5CC7514}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B31F0DC4-12A2-471B-A47C-0EE3A5CC7514}.Release|Any CPU.Build.0 = Release|Any CPU
-		{653D2B59-B37F-4568-8AF1-A0A642756D3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{653D2B59-B37F-4568-8AF1-A0A642756D3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{653D2B59-B37F-4568-8AF1-A0A642756D3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{653D2B59-B37F-4568-8AF1-A0A642756D3A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4DF7D354-5C0D-45B5-8E7D-D8FFAEB7CE85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4DF7D354-5C0D-45B5-8E7D-D8FFAEB7CE85}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4DF7D354-5C0D-45B5-8E7D-D8FFAEB7CE85}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4DF7D354-5C0D-45B5-8E7D-D8FFAEB7CE85}.Release|Any CPU.Build.0 = Release|Any CPU
-		{932EEBE9-2155-4A90-ADC7-21F42631D4B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{932EEBE9-2155-4A90-ADC7-21F42631D4B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{932EEBE9-2155-4A90-ADC7-21F42631D4B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{932EEBE9-2155-4A90-ADC7-21F42631D4B1}.Release|Any CPU.Build.0 = Release|Any CPU
 		{12B41CA6-7DDF-43E3-8C8C-F3063DDC68B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{12B41CA6-7DDF-43E3-8C8C-F3063DDC68B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{12B41CA6-7DDF-43E3-8C8C-F3063DDC68B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -63,6 +55,14 @@ Global
 		{20BDB715-0A80-4336-93A4-DAE158D58E40}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{20BDB715-0A80-4336-93A4-DAE158D58E40}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{20BDB715-0A80-4336-93A4-DAE158D58E40}.Release|Any CPU.Build.0 = Release|Any CPU
+		{194120EF-95A1-4D14-875D-E6EEAE104C06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{194120EF-95A1-4D14-875D-E6EEAE104C06}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{194120EF-95A1-4D14-875D-E6EEAE104C06}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{194120EF-95A1-4D14-875D-E6EEAE104C06}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30CA80B2-46AD-407A-9F00-C7ECDE8CA7AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30CA80B2-46AD-407A-9F00-C7ECDE8CA7AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30CA80B2-46AD-407A-9F00-C7ECDE8CA7AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30CA80B2-46AD-407A-9F00-C7ECDE8CA7AC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

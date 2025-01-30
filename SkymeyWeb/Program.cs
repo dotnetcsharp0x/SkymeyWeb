@@ -9,7 +9,7 @@ using SkymeyWeb.Components;
 builder.Services.AddHttpClient();
 var app = builder.Build();
 
-    // Configure the HTTP request pipeline.
+    // Configure the HTTP request pipeline
 
     app.UseExceptionHandler("/Error", createScopeForErrors: true);
     app.UseHsts();

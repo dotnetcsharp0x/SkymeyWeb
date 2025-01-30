@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Libs\SkymeyLibs\SkymeyLibs\SkymeyLibs.csproj" />
+    <ProjectReference Include="..\..\SkymeyLibs\SkymeyLibs\SkymeyLibs.csproj" />
   </ItemGroup>
 
 </Project>
