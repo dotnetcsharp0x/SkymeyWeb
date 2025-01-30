@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkymeyLibs", "..\SkymeyLibs
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkymeyPostModerator", "..\SkymeyPostModerator\SkymeyPostModerator\SkymeyPostModerator.csproj", "{30CA80B2-46AD-407A-9F00-C7ECDE8CA7AC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkymeyBondsService", "SkymeyBondsService\SkymeyBondsService.csproj", "{9749B1B6-7F12-4725-9BE8-B47869F37F7F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{30CA80B2-46AD-407A-9F00-C7ECDE8CA7AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{30CA80B2-46AD-407A-9F00-C7ECDE8CA7AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{30CA80B2-46AD-407A-9F00-C7ECDE8CA7AC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9749B1B6-7F12-4725-9BE8-B47869F37F7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9749B1B6-7F12-4725-9BE8-B47869F37F7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9749B1B6-7F12-4725-9BE8-B47869F37F7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9749B1B6-7F12-4725-9BE8-B47869F37F7F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
