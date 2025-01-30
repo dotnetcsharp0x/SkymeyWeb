@@ -366,3 +366,4 @@ FodyWeavers.xsd
 /SkymeyUserService/appsettings.json
 /SkymeyGatewayAPI/appsettings.json
 /SkymeyMainAPI/appsettings.json
+/SkymeyBondsService/appsettings.json
