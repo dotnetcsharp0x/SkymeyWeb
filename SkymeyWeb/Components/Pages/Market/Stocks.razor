@@ -1,12 +1,13 @@
 ﻿@page "/Market/Stocks"
 @inject HttpClient _httpClient
+@inject NavigationManager NavManager
 
 <PageTitle>Markets</PageTitle>
 
 <div class="container-fluid">
     <div class="row text-wrap">
-        <TypeMenu/>
-        @if (_API_TOKENs == null)
+        <TypeMenu IsActive="@IsActivePage" />
+        @if (_API_STOCKs == null)
 {
     <p><em>Loading...</em></p>
 }
@@ -15,7 +16,6 @@ else
         <table class="table market-table">
             <thead>
                 <tr>
-                    <th scope="col">#</th>
                     <th scope="col">Asset</th>
                     <th scope="col">Price</th>
                     <th scope="col">24h %</th>
@@ -23,29 +23,29 @@ else
                 </tr>
             </thead>
             <tbody>
-                    @foreach (var token in _API_TOKENs)
+                    @foreach (var token in _API_STOCKs)
                     {
-                        token.Symbol = token.Symbol.Replace("USDT", "");
-                        var symbol = token.Symbol + ".svg";
+                        token.Ticker = token.Ticker.Replace("USDT", "");
+                        var symbol = token.Ticker + ".png";
                         <tr class="hover-ticker">
-                    <td class="align-middle">1</td>
-                            <td><img src="/img/crypto/@symbol" height="35" width="35" title="@token.Name" alt="@token.Name" class="align-middle" />
-                                <div class="mx-2 align-middle d-inline-block"><div class="ticker-name">@token.Name</div>
-                                <div class="ticker ticker-ticker">@token.Symbol</div>
+                            <td>
+                                <img src="/img/crypto/@symbol" height="35" width="35" title="@token.Ticker" alt="@token.Title" class="align-middle" onerror="this.src='/img/stocks/alt.png';" />
+                                <div class="mx-2 align-middle d-inline-block"><div class="ticker-name">@token.Title</div>
+                                <div class="ticker ticker-ticker">@token.Ticker</div>
                             </div>
                     </td>
                     <td class="align-middle">
-                                @if (Convert.ToDouble(token.Price) > 1.00000000000000000001) {
-                                    string price = string.Format("{0:### ### ###.##}", Convert.ToDouble(token.Price)).Replace(",", ".");
+                                @if (Convert.ToDouble(1) > 1.00000000000000000001) {
+                                    string price = string.Format("{0:### ### ###.##}", Convert.ToDouble(1)).Replace(",", ".");
                                     @price;
                                 }
                                 else {
-                                    string price = string.Format("{0:### ### ###0.##############}", Convert.ToDouble(token.Price)).Replace(",", ".");
+                                    string price = string.Format("{0:### ### ###0.##############}", Convert.ToDouble(1)).Replace(",", ".");
                                     @price;
                                 }
                     </td>
-                    <td class="align-middle">@token.tfhc</td>
-                    <td class="align-middle">@token.sdc%</td>
+                    <td class="align-middle">1</td>
+                    <td class="align-middle">1</td>
                 </tr>
                     } 
             </tbody>
@@ -55,10 +55,12 @@ else
 </div>
 
 @code {
-    private IEnumerable<TokenList>? _API_TOKENs;
+    private IEnumerable<stock_stocks>? _API_STOCKs;
+    public string IsActivePage { get; set; } = default!;
 
     protected override async Task OnInitializedAsync()
     {
-        _API_TOKENs = await _httpClient.GetFromJsonAsync<IEnumerable<TokenList>>("https://localhost:5071/Token/GetTokenList");
+        IsActivePage = NavManager.ToBaseRelativePath(NavManager.Uri);
+        _API_STOCKs = await _httpClient.GetFromJsonAsync<IEnumerable<stock_stocks>>("https://localhost:5071/Stock/GetStocksParams?skip=0&take=50");
     }
 }

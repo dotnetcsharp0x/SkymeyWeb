@@ -1,6 +1,0 @@
-@SkymeyBondsService_HostAddress = http://localhost:5102
-
-GET {{SkymeyBondsService_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###

@@ -3,18 +3,31 @@
         <div id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/Market/Crypto">Crypto</a>
+                    <a class="nav-link @CheckActive("Market/Crypto")" aria-current="page" href="/Market/Crypto">Crypto</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/Market/Stocks">Stocks</a>
+                    <a class="nav-link @CheckActive("Market/Stocks")" href="/Market/Stocks">Stocks</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/Market/Bonds">Bonds</a>
+                    <a class="nav-link @CheckActive("Market/Bonds")" href="/Market/Bonds">Bonds</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/Market/ETF">Etf</a>
+                    <a class="nav-link @CheckActive("Market/ETF")" href="/Market/ETF">Etf</a>
                 </li>
             </ul>
         </div>
     </div>
 </nav>
+
+@code {
+    [Parameter] public string IsActive { get; set; }
+
+    public string CheckActive(string item) {
+        if (item == IsActive) return "active";
+        else return "";
+    }
+
+    protected override void OnInitialized() {
+
+    }
+}

@@ -1,11 +1,12 @@
 ﻿@page "/Market/ETF"
 @inject HttpClient _httpClient
+@inject NavigationManager NavManager
 
 <PageTitle>Markets</PageTitle>
 
 <div class="container-fluid">
     <div class="row text-wrap">
-        <TypeMenu />
+        <TypeMenu IsActive="@IsActivePage" />
         @if (_API_TOKENs == null)
 {
     <p><em>Loading...</em></p>
@@ -56,9 +57,11 @@ else
 
 @code {
     private IEnumerable<TokenList>? _API_TOKENs;
+    public string IsActivePage { get; set; } = default!;
 
     protected override async Task OnInitializedAsync()
     {
+        IsActivePage = NavManager.ToBaseRelativePath(NavManager.Uri);
         _API_TOKENs = await _httpClient.GetFromJsonAsync<IEnumerable<TokenList>>("https://localhost:5071/Token/GetTokenList");
     }
 }

@@ -11,9 +11,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="SkymeyLibs">
-      <HintPath>D:\projects\Skymey\Libs\SkymeyLibs\SkymeyLibs\bin\Debug\net8.0\SkymeyLibs.dll</HintPath>
-    </Reference>
+    <Folder Include="wwwroot\img\bonds\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\SkymeyLibs\SkymeyLibs\SkymeyLibs.csproj" />
   </ItemGroup>
 
 </Project>
