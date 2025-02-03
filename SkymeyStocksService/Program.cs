@@ -13,7 +13,7 @@ builder.Services.AddSwaggerGen();
 builder.Configuration.SetBasePath(builder.Configuration.GetSection("ConfigPath").Value)
             .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
 builder.Services.Configure<MainSettings>(builder.Configuration.GetSection("MainSettings"));
-builder.Services.AddSingleton<IMongoRepository, MongoPostRepository>();
+builder.Services.AddScoped<IMongoRepository, MongoPostRepository>();
 
 var app = builder.Build();
 

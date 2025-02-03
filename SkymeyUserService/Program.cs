@@ -72,7 +72,7 @@ builder.Services.AddAuthentication(option => { // ”казываем аутентификацию с пом
 });
 #endregion
 builder.Services.Configure<MainSettings>(builder.Configuration.GetSection("MainSettings"));
-builder.Services.AddSingleton<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
 var app = builder.Build();
 
 
