@@ -1,0 +1,30 @@
+﻿@page "/Market/Crypto/{slug}"
+@inject HttpClient _httpClient
+@inject NavigationManager NavManager
+
+<PageTitle>1</PageTitle>
+
+<div class="container-fluid">
+    <div class="row text-wrap">
+        <a href="/Market/Crypto">Back</a>
+        @if (_API_TOKEN == null)
+        {
+            <p><em>Loading...</em></p>
+        }
+        else
+        {
+            @_API_TOKEN.Name
+        }
+    </div>
+</div>
+
+@code {
+    private API_TOKEN? _API_TOKEN;
+    [Parameter]
+    public string slug { get; set; } = default!;
+
+    protected override async Task OnInitializedAsync()
+    {
+        _API_TOKEN = await _httpClient.GetFromJsonAsync<API_TOKEN>("https://localhost:5071/Token/GetToken?slug=bitcoin");
+    }
+}

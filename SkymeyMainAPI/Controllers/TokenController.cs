@@ -32,6 +32,16 @@ namespace SkymeyGatewayAPI.Controllers
                 return result;
             }
         }
+        [HttpGet]
+        [Route("GetToken")]
+        public async Task<API_TOKEN> GetToken(string slug)
+        {
+            using (var client = new HttpClient())
+            {
+                API_TOKEN result = await client.GetFromJsonAsync<API_TOKEN>("https://localhost:5101/Token/GetToken?slug=" + slug);
+                return result;
+            }
+        }
         [HttpPost]
         [Route("AddToken")]
         public async Task<bool> AddToken(API_TOKEN token)

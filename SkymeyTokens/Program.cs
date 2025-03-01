@@ -1,3 +1,4 @@
+using MongoDB.Driver;
 using SkymeyLibs;
 using SkymeyLibs.Data;
 using SkymeyLibs.Interfaces.Data;
@@ -13,7 +14,7 @@ builder.Services.AddSwaggerGen();
 builder.Configuration.SetBasePath(builder.Configuration.GetSection("ConfigPath").Value)
             .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
 builder.Services.Configure<MainSettings>(builder.Configuration.GetSection("MainSettings"));
-builder.Services.AddScoped<IMongoRepository, MongoPostRepository>();
+builder.Services.AddSingleton(new MongoClient(builder.Configuration.GetSection("MainSettings:MongoDatabase:DBServer").Value));
 
 var app = builder.Build();
 

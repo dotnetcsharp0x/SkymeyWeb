@@ -8,34 +8,34 @@
     <div class="row text-wrap">
         <TypeMenu IsActive="@IsActivePage" />
         @if (_API_TOKENs == null)
-{
-    <p><em>Loading...</em></p>
-}
-else
-{
-        <table class="table market-table">
-            <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Asset</th>
-                    <th scope="col">Price</th>
-                    <th scope="col">24h %</th>
-                    <th scope="col">7d %</th>
-                </tr>
-            </thead>
-            <tbody>
+        {
+            <p><em>Loading...</em></p>
+        }
+        else
+        {
+            <table class="table market-table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Asset</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">24h %</th>
+                        <th scope="col">7d %</th>
+                    </tr>
+                </thead>
+                <tbody>
                     @foreach (var token in _API_TOKENs)
                     {
                         token.Symbol = token.Symbol.Replace("USDT", "");
                         var symbol = token.Symbol + ".svg";
-                        <tr class="hover-ticker">
-                    <td class="align-middle">1</td>
+                        <tr class="hover-ticker" @onclick="() => GoToDetails(token.Slug)">
+                            <td class="align-middle">1</td>
                             <td><img src="/img/crypto/@symbol" height="35" width="35" title="@token.Name" alt="@token.Name" class="align-middle" />
                                 <div class="mx-2 align-middle d-inline-block"><div class="ticker-name">@token.Name</div>
-                                <div class="ticker ticker-ticker">@token.Symbol</div>
-                            </div>
-                    </td>
-                    <td class="align-middle">
+                                    <div class="ticker ticker-ticker">@token.Symbol</div>
+                                </div>
+                            </td>
+                            <td class="align-middle">
                                 @if (Convert.ToDouble(token.Price) > 1.00000000000000000001) {
                                     string price = string.Format("{0:### ### ###.##}", Convert.ToDouble(token.Price)).Replace(",", ".");
                                     @price;
@@ -44,14 +44,14 @@ else
                                     string price = string.Format("{0:### ### ###0.##############}", Convert.ToDouble(token.Price)).Replace(",", ".");
                                     @price;
                                 }
-                    </td>
-                    <td class="align-middle">@token.tfhc</td>
-                    <td class="align-middle">@token.sdc%</td>
-                </tr>
+                            </td>
+                            <td class="align-middle">@token.tfhc</td>
+                            <td class="align-middle">@token.sdc%</td>
+                        </tr>
                     } 
-            </tbody>
-        </table>
-}
+                </tbody>
+            </table>
+        }
     </div>
 </div>
 
@@ -63,5 +63,9 @@ else
     {
         IsActivePage = NavManager.ToBaseRelativePath(NavManager.Uri);
         _API_TOKENs = await _httpClient.GetFromJsonAsync<IEnumerable<TokenList>>("https://localhost:5071/Token/GetTokenList");
+    }
+
+    private void GoToDetails(string slug) {
+        NavManager.NavigateTo($"/Market/Crypto/" + slug);
     }
 }

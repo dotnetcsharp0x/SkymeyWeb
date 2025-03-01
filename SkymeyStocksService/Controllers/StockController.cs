@@ -4,6 +4,8 @@ using SkymeyLibs;
 using SkymeyLibs.Models.Tables.Tokens;
 using SkymeyLibs.Interfaces.Data;
 using SkymeyLibs.Models.Tables.Stocks;
+using MongoDB.Driver;
+using SkymeyLibs.Data;
 
 namespace SkymeyStocksService.Controllers
 {
@@ -11,36 +13,36 @@ namespace SkymeyStocksService.Controllers
     [Route("[controller]")]
     public class StocksController : Controller
     {
-        private readonly IMongoRepository _db;
-        private readonly ILogger<StocksController> _logger;
-        private readonly IOptions<MainSettings> _options;
+        private MongoClient _client;
+        private MongoPostRepository _postRepository;
+        private IOptions<MainSettings> _options;
 
-        public StocksController(ILogger<StocksController> logger, IOptions<MainSettings> options, IMongoRepository db)
+        public StocksController(MongoClient client, IOptions<MainSettings> options)
         {
-            _logger = logger;
+            _client = client;
             _options = options;
-            _db = db;
+            _postRepository = new MongoPostRepository(_client, _options.Value.MongoDatabase);
         }
 
         [HttpGet]
         [Route("GetStocks")]
         public async Task<IEnumerable<stock_stocks>> GetStocks()
         {
-            return await _db.GetStocks();
+            return await _postRepository.GetStocks();
         }
 
         [HttpGet]
         [Route("GetStocksParams")]
         public async Task<IEnumerable<stock_stocks>> GetStocks(int skip = 0, int take = 1)
         {
-            return await _db.GetStocksParams(skip, take);
+            return await _postRepository.GetStocksParams(skip, take);
         }
 
         [HttpPost]
         [Route("AddStock")]
         public async Task<IActionResult> AddBond(stock_stocks stock)
         {
-            await _db.AddStock(stock);
+            await _postRepository.AddStock(stock);
             return Ok();
         }
     }

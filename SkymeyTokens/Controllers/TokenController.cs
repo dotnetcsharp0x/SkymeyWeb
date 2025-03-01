@@ -6,6 +6,7 @@ using SkymeyLibs.Interfaces.Data;
 using SkymeyLibs.Models.Tables.Posts;
 using SkymeyLibs;
 using SkymeyLibs.Models.Tables.Tokens;
+using MongoDB.Driver;
 
 namespace SkymeyTokens.Controllers
 {
@@ -13,36 +14,42 @@ namespace SkymeyTokens.Controllers
     [Route("[controller]")]
     public class TokenController : Controller
     {
-        private readonly IMongoRepository _db;
-        private readonly ILogger<TokenController> _logger;
-        private readonly IOptions<MainSettings> _options;
+        private MongoClient _client;
+        private MongoPostRepository _postRepository;
+        private IOptions<MainSettings> _options;
 
-        public TokenController(ILogger<TokenController> logger, IOptions<MainSettings> options, IMongoRepository db)
+        public TokenController(MongoClient client, IOptions<MainSettings> options)
         {
-            _logger = logger;
+            _client = client;
             _options = options;
-            _db = db;
+            _postRepository = new MongoPostRepository(_client, _options.Value.MongoDatabase);
         }
 
         [HttpGet]
         [Route("GetTokens")]
         public async Task<IEnumerable<API_TOKEN>> GetTokens()
         {
-            return await _db.GetTokens();
+            return await _postRepository.GetTokens();
         }
 
         [HttpGet]
         [Route("GetTokenList")]
         public async Task<IEnumerable<TokenList>> GetTokenList()
         {
-            return await _db.GetTokenList();
+            return await _postRepository.GetTokenList();
+        }
+        [HttpGet]
+        [Route("GetToken")]
+        public async Task<API_TOKEN> GetToken(string slug)
+        {
+            return await _postRepository.GetToken(slug);
         }
 
         [HttpPost]
         [Route("AddToken")]
         public async Task<IActionResult> AddToken(API_TOKEN token)
         {
-            await _db.AddToken(token);
+            await _postRepository.AddToken(token);
             return Ok();
         }
     }

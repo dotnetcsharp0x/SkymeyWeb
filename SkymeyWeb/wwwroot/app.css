@@ -359,8 +359,12 @@ vertical-align:middle;
     color:#565656;
 }
 
+.market-table tr {
+    cursor: pointer;
+}
+
 .trade .btn-primary {
-    margin-bottom:15px;
+    margin-bottom: 15px;
 }
 .trade .card {
     border-radius:15px;
