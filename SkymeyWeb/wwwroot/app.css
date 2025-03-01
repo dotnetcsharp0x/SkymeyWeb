@@ -417,6 +417,64 @@ color: #0086F8;
     border: 2px solid #0087fc77;
 }
 
+.coin-data-title h1{
+   font-size:18pt;
+   font-weight:bold;
+}
+.coin-data-title {
+    line-height:10px;
+}
+.coin-data-title .coin-data-title-ticker {
+    font-weight:bold;
+    color:#3737377d;
+}
+.favorite .star {
+    color:#ffd764;
+}
+
+.supply-data {
+    background-color:#dadada31;
+    border-radius:5px;
+    padding:10px;
+    line-height:30px;
+}
+
+.market-cap-data .market-cap-data-title {
+    font-weight: bold;
+    font-size:14pt;
+    color:#2b2b2b;
+}
+
+.market-cap-data .market-cap-data-rank {
+    border: 1px solid #63636336;
+    background-color: #dadada4e;
+    padding:4px;
+    border-radius:6px;
+    font-size:10pt;
+}
+
+.market-cap {
+    text-align: center;
+}
+.market-cap div {
+    font-weight: bold;
+    font-size:16pt;
+}
+
+.fdv-cap {
+    border-left: 2px solid #5757571a;
+    text-align: center;
+}
+
+.fdv-cap div {
+    font-weight: bold;
+    font-size: 16pt;
+}
+
+.progress-bar {
+    background-color: #0087FC;
+    width: 94.43%;
+}
 
 @media (max-width:960px) {
     #navbarNavAltMarkup .nav-link {
