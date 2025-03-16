@@ -38,6 +38,13 @@ namespace SkymeyStocksService.Controllers
             return await _postRepository.GetStocksParams(skip, take);
         }
 
+        [HttpGet]
+        [Route("GetStock")]
+        public async Task<stock_stocks> GetStock(string isin)
+        {
+            return await _postRepository.GetStock(isin);
+        }
+
         [HttpPost]
         [Route("AddStock")]
         public async Task<IActionResult> AddBond(stock_stocks stock)

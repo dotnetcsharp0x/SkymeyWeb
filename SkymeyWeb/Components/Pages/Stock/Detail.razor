@@ -1,4 +1,4 @@
-﻿@page "/Market/Crypto/{slug}"
+﻿@page "/Market/Stocks/{isin}"
 @inject HttpClient _httpClient
 @inject NavigationManager NavManager
 
@@ -7,7 +7,7 @@
 <div class="container-fluid">
     <div class="row text-wrap">
         <TypeMenu IsActive="@IsActivePage" />
-        @if (_API_TOKEN == null)
+        @if (STOCK == null)
         {
             <p><em>Loading...</em></p>
         }
@@ -18,14 +18,14 @@
                     <div class="col-9">
                         <div class="coin-data-title d-flex align-items-center">
                             <div class="coin-data-title-img">
-                                <img src="/img/crypto/@symbol" height="55" width="55" title="@_API_TOKEN.Name" alt="@_API_TOKEN.Name" class="align-middle" />
+                                <img src="/img/crypto/@symbol" height="55" width="55" title="@STOCK.Title" alt="@STOCK.Title" class="align-middle" onerror="this.src='/img/stocks/alt.png';" />
                             </div>
                             <div class="coin-data-title d-block mx-2">
                                 <div class="coin-data-title-title">
-                                    <h1>@_API_TOKEN.Name</h1>
+                                    <h1>@STOCK.Title</h1>
                                 </div>
                                 <div class="coin-data-title-ticker">
-                                    @_API_TOKEN.Symbol
+                                    @STOCK.Ticker
                                 </div>
                             </div>
                         </div>
@@ -104,9 +104,9 @@
 
 
 @code {
-    private API_TOKEN? _API_TOKEN;
+    private stock_stocks? STOCK;
     [Parameter]
-    public string slug { get; set; } = default!;
+    public string isin { get; set; } = default!;
     public string IsActivePage { get; set; } = default!;
     private string symbol = default!;
     private bool favorited = default!;
@@ -115,8 +115,8 @@
     {
         IsActivePage = NavManager.ToBaseRelativePath(NavManager.Uri);
         Console.WriteLine(IsActivePage);
-        _API_TOKEN = await _httpClient.GetFromJsonAsync<API_TOKEN>("https://localhost:5071/Token/GetToken?slug=" + slug);
-        symbol = _API_TOKEN.Symbol + ".svg";
+        STOCK = await _httpClient.GetFromJsonAsync<stock_stocks>("https://localhost:5071/Stock/GetStock?isin=" + isin);
+        symbol = STOCK.Ticker + ".png";
         favorited = true;
     }
 }

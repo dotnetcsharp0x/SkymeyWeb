@@ -476,6 +476,87 @@ color: #0086F8;
     width: 94.43%;
 }
 
+.start {
+    background-color: #0086F8;
+    color:white;
+    margin-top:15px;
+}
+
+.start:hover {
+    color:white;
+    background-color: #0086f8c4;
+}
+
+.align-text-end {
+    text-align:end;
+}
+.portfolio {
+    padding:15px 0px 15px 15px;
+    margin: 0px 0px 0px 5px;
+    border-radius:8px;
+    background-color:#63636310;
+}
+.portfolio .red {
+    color:red;
+    margin:0px 0px 0px 5px;
+    background-color:#ff000053;
+    border-radius:6px;
+    padding:2px 4px 2px 4px;
+    font-weight:bold;
+    font-size:10pt;
+}
+.portfolio .green {
+    color:green;
+    margin:0px 0px 0px 5px;
+    background-color:#31ff0053;
+    border-radius:6px;
+    padding:2px 4px 2px 4px;
+    font-weight:bold;
+    font-size:10pt;
+}
+.portfolio-main-top {
+    background-image: linear-gradient(to right, #535353, #4c4c4c, #454545, #3e3e3e, #373737);
+    border-radius: 16px;
+    color: #DADADA;
+    font-weight: bold;
+}
+
+.portfolio-main-top label {
+    font-size:14pt;
+}
+
+.portfolio-main-top .green {
+    color: #41AC5D;
+    font-weight: bold;
+}
+.portfolio-data {
+}
+
+.portfolio-data .table {
+    border: 1px solid #53535344;
+    border-radius: 16px;
+}
+.portfolio-main-title {
+    font-size:20pt;
+}
+.portfolio-main-title .bi-trash {
+    color:#ff4848ff;
+}
+.portfolio-main-title button {
+    background-color:#0086F8;
+    color:#dadada;
+    border-radius:10px;
+    font-weight:bold;
+    color:white;
+}
+.portfolio-main-title button:hover {
+    background-color:#1e97feff;
+    color:white;
+}
+.portfolio-main-title .portfolio-name {
+    padding: 0px 0px 0px 10px;
+}
+
 @media (max-width:960px) {
     #navbarNavAltMarkup .nav-link {
         margin-top: 5px;

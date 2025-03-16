@@ -30,7 +30,8 @@
                         var symbol = token.Symbol + ".svg";
                         <tr class="hover-ticker" @onclick="() => GoToDetails(token.Slug)">
                             <td class="align-middle">1</td>
-                            <td><img src="/img/crypto/@symbol" height="35" width="35" title="@token.Name" alt="@token.Name" class="align-middle" />
+                            <td>
+                                <img src="/img/crypto/@symbol" height="35" width="35" title="@token.Name" alt="@token.Name" class="align-middle" onerror="this.src='/img/crypto/question.png';" />
                                 <div class="mx-2 align-middle d-inline-block"><div class="ticker-name">@token.Name</div>
                                     <div class="ticker ticker-ticker">@token.Symbol</div>
                                 </div>
@@ -40,8 +41,34 @@
                                     string price = string.Format("{0:### ### ###.##}", Convert.ToDouble(token.Price)).Replace(",", ".");
                                     @price;
                                 }
-                                else {
-                                    string price = string.Format("{0:### ### ###0.##############}", Convert.ToDouble(token.Price)).Replace(",", ".");
+                                @if (Convert.ToDouble(token.Price) > 0.1 && Convert.ToDouble(token.Price) < 1.0)
+                                {
+                                    string price = string.Format("{0:0.###}", Convert.ToDouble(token.Price)).Replace(",", ".");
+                                    @price;
+                                }
+                                @if (Convert.ToDouble(token.Price) > 0.01 && Convert.ToDouble(token.Price) < 0.1)
+                                {
+                                    string price = string.Format("{0:0.####}", Convert.ToDouble(token.Price)).Replace(",", ".");
+                                    @price;
+                                }
+                                @if (Convert.ToDouble(token.Price) > 0.001 && Convert.ToDouble(token.Price) < 0.01)
+                                {
+                                    string price = string.Format("{0:0.#####}", Convert.ToDouble(token.Price)).Replace(",", ".");
+                                    @price;
+                                }
+                                @if (Convert.ToDouble(token.Price) > 0.0001 && Convert.ToDouble(token.Price) < 0.001)
+                                {
+                                    string price = string.Format("{0:0.######}", Convert.ToDouble(token.Price)).Replace(",", ".");
+                                    @price;
+                                }
+                                @if (Convert.ToDouble(token.Price) > 0.00001 && Convert.ToDouble(token.Price) < 0.0001)
+                                {
+                                    string price = string.Format("{0:0.#######}", Convert.ToDouble(token.Price)).Replace(",", ".");
+                                    @price;
+                                }
+                                @if (Convert.ToDouble(token.Price) > 0.000001 && Convert.ToDouble(token.Price) < 0.00001)
+                                {
+                                    string price = string.Format("{0:0.########}", Convert.ToDouble(token.Price)).Replace(",", ".");
                                     @price;
                                 }
                             </td>
@@ -66,6 +93,6 @@
     }
 
     private void GoToDetails(string slug) {
-        NavManager.NavigateTo($"/Market/Crypto/" + slug);
+        NavManager.NavigateTo($"/Market/Crypto/Overview/" + slug);
     }
 }

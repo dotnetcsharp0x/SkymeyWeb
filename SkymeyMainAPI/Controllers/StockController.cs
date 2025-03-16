@@ -33,6 +33,16 @@ namespace SkymeyGatewayAPI.Controllers
                 return result;
             }
         }
+        [HttpGet]
+        [Route("GetStock")]
+        public async Task<stock_stocks> GetStock(string isin)
+        {
+            using (var client = new HttpClient())
+            {
+                stock_stocks result = await client.GetFromJsonAsync<stock_stocks>("https://localhost:5703/Stocks/GetStock?isin=" + isin);
+                return result;
+            }
+        }
         [HttpPost]
         [Route("AddStock")]
         public async Task<bool> AddStock(stock_stocks stock)

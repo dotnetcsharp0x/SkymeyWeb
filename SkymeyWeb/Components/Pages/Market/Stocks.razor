@@ -27,7 +27,7 @@ else
                     {
                         token.Ticker = token.Ticker.Replace("USDT", "");
                         var symbol = token.Ticker + ".png";
-                        <tr class="hover-ticker">
+                        <tr class="hover-ticker" @onclick="() => GoToDetails(token.Isin)">
                             <td>
                                 <img src="/img/crypto/@symbol" height="35" width="35" title="@token.Ticker" alt="@token.Title" class="align-middle" onerror="this.src='/img/stocks/alt.png';" />
                                 <div class="mx-2 align-middle d-inline-block"><div class="ticker-name">@token.Title</div>
@@ -62,5 +62,9 @@ else
     {
         IsActivePage = NavManager.ToBaseRelativePath(NavManager.Uri);
         _API_STOCKs = await _httpClient.GetFromJsonAsync<IEnumerable<stock_stocks>>("https://localhost:5071/Stock/GetStocksParams?skip=0&take=50");
+    }
+    private void GoToDetails(string isin)
+    {
+        NavManager.NavigateTo($"/Market/Stocks/" + isin);
     }
 }

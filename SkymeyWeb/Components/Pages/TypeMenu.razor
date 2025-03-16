@@ -3,7 +3,7 @@
         <div id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link @CheckActive("Market/Crypto")" aria-current="page" href="/Market/Crypto">Crypto</a>
+                    <a class="nav-link ms-0 @CheckActive("Market/Crypto")" aria-current="page" href="/Market/Crypto">Crypto</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link @CheckActive("Market/Stocks")" href="/Market/Stocks">Stocks</a>
@@ -23,7 +23,7 @@
     [Parameter] public string IsActive { get; set; }
 
     public string CheckActive(string item) {
-        if (item == IsActive) return "active";
+        if (IsActive.Contains(item)) return "active";
         else return "";
     }
 

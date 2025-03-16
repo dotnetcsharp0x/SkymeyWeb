@@ -1,0 +1,43 @@
+﻿<nav class="navbar navbar-light navbar-typemenu p-0">
+    <div class="container-fluid">
+        <div id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link ms-0 @CheckActive("Overview")" aria-current="page" href="/Market/Crypto/Overview/@Slug">Overview</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link @CheckActive("Exchanges")" href="/Market/Crypto/Exchanges/@Slug">Exchanges</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link @CheckActive("Fundraising")" href="/Market/Crypto/Fundraising/@Slug">Fundraising</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link @CheckActive("Vesting")" href="/Market/Crypto/Vesting/@Slug">Vesting</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link @CheckActive("Contracts")" href="/Market/Crypto/Contracts/@Slug">Contracts</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link @CheckActive("Links")" href="/Market/Crypto/Links/@Slug">Links</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link @CheckActive("Chat")" href="/Market/Crypto/Chat/@Slug">Chat</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+@code {
+    [Parameter] public string IsActive { get; set; }
+    [Parameter] public string Slug { get; set; }
+
+    public string CheckActive(string item) {
+        if (IsActive.Contains(item)) return "active";
+        else return "";
+    }
+
+    protected override void OnInitialized() {
+
+    }
+}
